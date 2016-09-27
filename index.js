@@ -1,23 +1,17 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function (req, res) {
+app.get('/:name', function (req, res) {
+  var userName = req.params.name
   var page = "<html>"+
                 "<body>"+
-                  "<h1>Index.html</h1>"+
+                  "<h1>"+userName+"购物车"+"</h1>"
                 "</body>"+
             "</html>"
   res.send(page)
 });
 
-app.get('/song', function (req, res) {
-  var page = "<html>"+
-                "<body>"+
-                  "<h1>song.html</h1>"+
-                "</body>"+
-            "</html>"
-  res.send(page)
-});
-app.listen(4000,function(){
-  console.log('runing on port 4000...');
+
+app.listen(8000,function(){
+  console.log('runing on port 8000...');
 })
